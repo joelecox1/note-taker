@@ -1,13 +1,13 @@
 const util = require('util');
 const fs = require('fs');
-const uuid = require('uuid');
+const uuid = require('uuid/v1');
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 class Store {
   read() {
-    return readFileAsync('db/db.json', 'UTF8');
+    return readFileAsync('db/db.json', 'utf8');
   };
   write(note) {
     return writeFileAsync('db/db.json', JSON.stringify(note));
@@ -23,7 +23,7 @@ class Store {
       return parsedNotes;
     });
   };
-  addNotes(note) {
+  addNote(note) {
     const { title, text } = note;
     if (!title || !text) {
       throw new Error('Note Title & Text cannot be blank');
@@ -31,7 +31,7 @@ class Store {
     const newNote = { title, text, id: uuid() };
 
     return this.getNotes()
-      .then(notes => [...notes, newNote])
+      .then((notes) => [...notes, newNote])
       .then(updatedNotes => this.write(updatedNotes))
       .then(() => newNote)
   }
