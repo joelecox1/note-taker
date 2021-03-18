@@ -14,9 +14,9 @@
   
   ## Usage
 
-  [Note Taker](heroku link)
+  [Note Taker](https://note-taker-joel-challenge11.herokuapp.com/)
 
-  Click the 'Get Started' button on the landing page. Write your note into the right column of the page and click the Save button in the upper right corner. The saved note will appear in the column on the left.
+  Click the link above to visit the deployed application. Then click the 'Get Started' button on the landing page. Write your note into the right column of the page and click the Save button in the upper right corner. The saved note will appear in the column on the left.
 
   ![Screenshot of landing page](./public/assets/images/note-taker-screenshot1.png)
 
